@@ -9,8 +9,8 @@ const app = express();
 app.use(bodyParser({ urlencoded: true }));
 app.use(express.json())
 
-//serve static files
-app.use(express.static('client'));
+//serve build folder from webpack
+app.use('/build', express.static(path.join(__dirname, '../build')));
 
 const channel = "hi"
 //use to add subscriber to certain channel
@@ -81,6 +81,8 @@ app.post('/login', (req, res) => {
 app.get('/userview', /**send userid? and sendFile userview? */)
 
 app.get('/adminview', /**send userid? and sendFile adminview? */)
+
+app.use('/*', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/index.html')));
 
 
 const PORT = 3000;
