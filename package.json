@@ -1,0 +1,39 @@
+{
+  "name": "news_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./client/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve\" \"nodemon server/server.js\"",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "author": "elisebare",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "ioredis": "^4.19.2",
+    "pg": "^8.5.1",
+    "react": "^17.0.1",
+    "webpack-serve": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.1",
+    "mini-css-extract-plugin": "^1.3.1",
+    "nodemon": "^2.0.6",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
